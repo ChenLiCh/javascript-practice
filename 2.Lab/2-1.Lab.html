@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>2-1.Lab</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="./common/common2.js"></script>
+</head>
+
+<body>
+    <script>
+        // =====================================
+        // Q1 假設一個三角形的三邊長分別為 a1, b1, c1，計算並輸出周長。
+        // 顯示 「周長是：[]」
+        let ans1;
+        let a1 = 3;
+        let b1 = 4;
+        let c1 = 5;
+        ans1 = `周長是:${[a1+b1+c1]}`;
+        // =====================================
+        // Q2 顯示 「It's my zodiac sign♉」(請用Unicode顯示星座符號)
+        let ans2;
+        ans2 = 'It\'s my zodiac sign\u2649';
+        // =====================================
+        // Q3 假設一個人的年齡是 age，在不考慮閏年的狀況下，計算並輸出他大約活了多少天（1年365天）。
+        // 顯示 「大約活了：[]天」
+        let ans3;
+        let age = 31;
+        ans3=`大約活了:[${age}]天`;
+        // =====================================
+        // Q4 計算a4 b4的平均值。
+        let ans4;
+        let a4 = 20;
+        let b4 = 30;
+        ans4=`${(a4+b4)/2}`;
+        // =====================================
+        // Q5 讓a5+b5的輸出為0.3 (toFixed)
+        let ans5;
+        let a5 = 0.1;
+        let b5 = 0.2;
+        ans5=`${(a5+b5).toFixed(1)}`;
+        // =====================================
+        // Q6 輸出其中的最大值。(請用三元判斷式撰寫)
+        // 「最大值是：[]」
+        let ans6;
+        let a6 = 5;
+        let b6 = 10;
+        a6>b6?ans6='最大值是:[a6]':ans6='最大值是:[b6]';
+        // =====================================
+        // Q7
+        // let x = 3;
+        // let y = x++ + ++x + x++; 
+        // 請問y是多少
+        let ans7;
+        let x = 3;
+        let y = x++ + ++x + x++; 
+        ans7=`y=${y}`;
+        // =====================================
+        // Q8 將華氏溫度轉換為攝氏溫度，並輸出結果(到小數點第二位)。
+        // (公式：攝氏 = (華氏 - 32) × 5 / 9)
+        let ans8;
+        let F = 100; // 華氏
+        ans8=`攝氏: ${((100-32)*5/9).toFixed(2)}`;
+        // =====================================
+        // Q9 請用程式檢查a9是否在10到20中間(含10與20) 若有輸出true，反之false
+        let ans9;
+        let a9 = 15;
+        10<=a9 && a9 <= 20?ans9='true':ans9='false';
+        // =====================================
+        // Q10 在只宣告一個新變數的情況將a4與b4交換 並顯示出來 
+        // 「原本a4=10,b4=50 交換後a4=50,b4=10」
+        let ans10;
+        let a10 = 10;
+        let b10 = 50;
+        let temp;
+        temp = a10;
+        a10 = b10;
+        b10 = temp;
+        ans10 = `交換後 a10=${a10}, b10=${b10}`;
+    </script>
+</body>
+
+</html>
