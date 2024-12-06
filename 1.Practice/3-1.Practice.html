@@ -1,105 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>3-1.Practice</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./common/style.css">
-</head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./common/style.css" />
+  </head>
 
-<body>
+  <body>
     <div class="my-title-card">
-        <h1>3-1.Practice</h1>
+      <h1>3-1.Practice</h1>
     </div>
     <script>
+      // ============clg ccl nfn
 
-        // ============clg ccl nfn
+      // =====================================
+      // Prac1.Object
+      let obj = new Object();
+      obj.name = "test";
+      obj.age = 18;
+      console.log(obj);
+      // =====================================
+      // Prac2.Array
+      arr = [];
+      arr[0] = 0;
+      arr[1] = "1";
+      arr[2] = "two";
+      console.log(arr);
+      arr.forEach((element) => console.log(element));
+      // =====================================
+      // Prac3.function
 
-        // =====================================
-        // Prac1.Object
-        let obj = new Object();
-        obj.name='test';
-        obj.age=18;
-        console.log(obj);
-        // =====================================
-        // Prac2.Array
-        arr=[];
-        arr[0] = 0;
-        arr[1] = '1';
-        arr[2] = 'two';
-        console.log(arr);
-        arr.forEach(element=>console.log(element));
-        // =====================================
-        // Prac3.function
+      // // 轉攝氏的方法 (公式：攝氏 = (華氏 - 32) × 5 / 9)
+      // // Fahrenheit華氏 Celsius攝氏
+      function convert(t) {
+        return ((t - 32) * 5) / 9;
+      }
+      console.log(convert(100));
+      // =====================================
+      // Prac4.let function
+      const convert2 = function (t) {
+        return ((t - 32) * 5) / 9;
+      };
+      console.log(convert2(100));
+      // =====================================
+      // Prac5.Hoisting
 
-        // // 轉攝氏的方法 (公式：攝氏 = (華氏 - 32) × 5 / 9) 
-        // // Fahrenheit華氏 Celsius攝氏
-        function convert(t){
-            return (t-32)*5/9;
+      console.log(test);
+      var test = "Hello";
+      function test() {}
+
+      // =====================================
+      // Prac6.Arrow Function
+      const convert3 = (t) => {
+        return ((t - 32) * 5) / 9;
+      };
+      console.log(convert3(100));
+      // =====================================
+      // Prac7.This
+
+      // =====================================
+      // Prac8.class constructor
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
         }
-        console.log(convert(100));
-        // =====================================
-        // Prac4.let function
-        const convert2 = function(t){
-            return (t-32)*5/9;
-        }
-        console.log(convert2(100));
-        // =====================================
-        // Prac5.Hoisting
-        
-        console.log(test);
-        var test = 'Hello';
-        function test(){
+      }
 
-        }
-        
-        // =====================================
-        // Prac6.Arrow Function
-        const convert3 = t=>{
-            return (t-32)*5/9;
-        };
-        console.log(convert3(100));
-        // =====================================
-        // Prac7.This
+      let person = new Person("Usagi", 18);
+      console.log(person);
+      // =====================================
+      // Prac9.Method
+      person.getName = function () {
+        return this.name;
+      };
+      console.log(person.getName());
+      // =====================================
+      // Prac10.Arrow Function + This
+      console.clear();
 
-        // =====================================
-        // Prac8.class constructor
-        class Person{
-            constructor(name, age){
-                this.name = name;
-                this.age = age;
-            }
-        }
-
-        let person = new Person("Usagi", 18);
-        console.log(person);
-        // =====================================
-        // Prac9.Method
-        person.getName = function() {
-            return this.name;
-        }
-        console.log(person.getName());
-        // =====================================
-        // Prac10.Arrow Function + This
-        console.clear();
-
-        person.lastName = 'YAAA';
-        person.getFullName = ()=>{
-            // arrow function 不會建立自己的this，而是從定義時的上下文繼承this。
-            // 在這段程式碼中，person.getName 的 arrow function 是在全域範圍內定義的，因此它的this是指向全域物件（在瀏覽器中是window，在Node.js中是global），而不是指向person實例。
-            console.log(this);
-            return this.name;
-        }
-        console.log(person.getFullName());
-        // =====================================
-        // Prac11.Reference Types
-        let person2 = new Object();
-        person2.name = 'Derek';
-        let otherPerson = person2;
-        otherPerson.name = 'Peter';
-        console.log(person2 === otherPerson);
-        console.log(otherPerson.name);
+      person.lastName = "YAAA";
+      person.getFullName = () => {
+        // arrow function 不會建立自己的this，而是從定義時的上下文繼承this。
+        // 在這段程式碼中，person.getName 的 arrow function 是在全域範圍內定義的，因此它的this是指向全域物件（在瀏覽器中是window，在Node.js中是global），而不是指向person實例。
+        console.log(this);
+        return this.name;
+      };
+      console.log(person.getFullName());
+      // =====================================
+      // Prac11.Reference Types
+      let person2 = new Object();
+      person2.name = "Derek";
+      let otherPerson = person2;
+      otherPerson.name = "Peter";
+      console.log(person2 === otherPerson);
+      console.log(otherPerson.name);
     </script>
-</body>
-
+  </body>
 </html>

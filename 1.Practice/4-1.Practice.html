@@ -1,30 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>4-1.Practice</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./common/style.css">
-</head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./common/style.css" />
+  </head>
 
-<body>
+  <body>
     <div class="my-title-card">
-        <h1>4-1.Practice</h1>
+      <h1>4-1.Practice</h1>
     </div>
     <script>
+      // =====================================
+      // Prac1.window
+      window.alert("AAAAA");
+      window.prompt("BBBBB");
+      console.log(window.location.href);
+      console.log(window.screen.width);
+      window.console.log("window's console.log");
+      console.log(window.history.forward());
+      console.log(window.history.back());
+      // =====================================
+      // Prac2.document
+      console.log(window.document.title);
+      console.log(window.document.body.innerText);
+      console.log(window.document.body.innerHTML);
+      // =====================================
+      // Prac3.insertAdjacentHTML
+      document.body.innerHTML = "<h1>This is H1</h1>";
 
-        // =====================================
-        // Prac1.window
+      document.body.insertAdjacentText(
+        "beforebegin",
+        "這是插入在 body 外部前方的文字。"
+      );
+      document.body.insertAdjacentText(
+        "afterbegin",
+        "這是插入在 body 開頭的文字。"
+      );
+      document.body.insertAdjacentText(
+        "beforeend",
+        "這是插入在 body 結尾的文字。"
+      );
+      document.body.insertAdjacentText(
+        "afterend",
+        "這是插入在 body 外部後方的文字。"
+      );
 
-        // =====================================
-        // Prac2.document
+      document.body.insertAdjacentHTML(
+        "beforeend",
+        "<strong>這是一段粗體 HTML</strong>"
+      );
 
-        // =====================================
-        // Prac3.insertAdjacentHTML
-
-        // =====================================
-        // Prac4.insertAdjacentHTML
+      // =====================================
+      // Prac4.insertAdjacentHTML
     </script>
-</body>
-
+  </body>
 </html>

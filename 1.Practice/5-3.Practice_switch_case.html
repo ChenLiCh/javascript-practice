@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>5-3.Lab_switch_case</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
-<body>
-
+  <body>
     <script>
-        // 全票=票價：320
-        // 優待票=票價：290
-        // 早場票=票價：270
-        // 愛心票=票價：160
+      // 全票=票價：320
+      // 優待票=票價：290
+      // 早場票=票價：270
+      // 愛心票=票價：160
 
-        let content;
-
-        // 邏輯寫這===============================================================
-
-
-        // 邏輯寫這===============================================================
-
-
+      let content;
+      content = window.prompt("請輸入:").trim();
+      // 邏輯寫這===============================================================
+      switch (content) {
+        case "全票":
+          window.alert("票價 320");
+          break;
+        case "優待票":
+          window.alert("票價 290");
+          break;
+        case "早場票":
+          window.alert("票價 270");
+          break;
+        case "愛心票":
+          window.alert("票價 160");
+          break;
+        default:
+          window.alert("輸入無效");
+      }
+      // 邏輯寫這===============================================================
     </script>
-
-</body>
-
+  </body>
 </html>
