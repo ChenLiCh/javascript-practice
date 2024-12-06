@@ -81,10 +81,24 @@
         console.log(person.getName());
         // =====================================
         // Prac10.Arrow Function + This
-        
+        console.clear();
+
+        person.lastName = 'YAAA';
+        person.getFullName = ()=>{
+            // arrow function 不會建立自己的this，而是從定義時的上下文繼承this。
+            // 在這段程式碼中，person.getName 的 arrow function 是在全域範圍內定義的，因此它的this是指向全域物件（在瀏覽器中是window，在Node.js中是global），而不是指向person實例。
+            console.log(this);
+            return this.name;
+        }
+        console.log(person.getFullName());
         // =====================================
         // Prac11.Reference Types
-
+        let person2 = new Object();
+        person2.name = 'Derek';
+        let otherPerson = person2;
+        otherPerson.name = 'Peter';
+        console.log(person2 === otherPerson);
+        console.log(otherPerson.name);
     </script>
 </body>
 
