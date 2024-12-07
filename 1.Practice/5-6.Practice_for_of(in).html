@@ -41,6 +41,36 @@
       let tbodyContent = "";
 
       // 邏輯寫這===============================================================
+      
+      // forEach
+      // students.forEach((student) => {
+      //   tbodyContent += `<tr>`;
+      //   tbodyContent += `<td>${student.name}</td>`;
+      //   tbodyContent += `<td>${student.chinese}</td>`;
+      //   tbodyContent += `<td>${student.english}</td>`;
+      //   tbodyContent += `<td>${student.math}</td>`;
+      //   tbodyContent += `</tr>`;
+      // });
+      
+      // for...in...
+      for(let index in students){
+        tbodyContent += `<tr>`;
+        tbodyContent += `<td>${student[index].name}</td>`;
+        tbodyContent += `<td>${student.chinese}</td>`;
+        tbodyContent += `<td>${student.english}</td>`;
+        tbodyContent += `<td>${student.math}</td>`;
+        tbodyContent += `</tr>`;
+      }
+
+      // for...of...
+      for(let student of students){
+        tbodyContent += `<tr>`;
+        tbodyContent += `<td>${student.name}</td>`;
+        tbodyContent += `<td>${student.chinese}</td>`;
+        tbodyContent += `<td>${student.english}</td>`;
+        tbodyContent += `<td>${student.math}</td>`;
+        tbodyContent += `</tr>`;
+      }
 
       let tableTag = `<div style="width: 80%;margin: auto;margin-top: 10%;">
             <h1>成績單</h1>
@@ -57,6 +87,7 @@
                 </table>
                 </div>`;
 
+      
       window.document.body.insertAdjacentHTML("afterbegin", tableTag);
     </script>
   </body>
