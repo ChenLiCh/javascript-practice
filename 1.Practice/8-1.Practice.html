@@ -64,6 +64,7 @@
               >
                 登入
               </button>
+
               <button class="btn btn-primary w-100" id="removeBtn">解除</button>
             </div>
           </div>
@@ -78,17 +79,19 @@
       function btnClickHandler(event) {
         alert("Hi");
       }
-      btnClickHandler = clickEvent;
       // =====================================
       // Prac2.eventHandler removeevent
       const removeBtn = document.querySelector("#removeBtn");
+
       removeBtn.onclick = function () {
         const b = document.querySelector("#loginBtn");
         b.onclick = undefined;
       };
       // =====================================
       // Prac3.addEventListener
-
+      document.querySelector("#loginBtn").addEventListener("click", (event) => {
+        alert("Hii");
+      });
       // =====================================
       // Prac4.removeEventListener
 
