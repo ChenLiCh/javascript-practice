@@ -69,6 +69,7 @@
       console.log(elementById instanceof Node);
       elementById.style.color = "red";
       // =====================================
+
       // Prac2.getElementsByTagName() : HTMLCollection
       let liTags = document.getElementsByTagName("li");
       for (let index = 0; index < liTags.length; index++) {
@@ -76,15 +77,18 @@
       }
       console.log(liTags, liTags.length);
       // =====================================
+
       // Prac3.getElementsByClassName() : HTMLCollection
       let element = document.getElementsByClassName("my-title-card");
       console.log(element);
       // =====================================
+
       // Prac4.getElementsByName() : NodeList
       // NodeList 才有 forEach method
       let element2 = document.getElementsByName("note");
       console.log(element2);
       // =====================================
+
       // Prac5.querySelector() : Element / querySelectorAll() : NodeList
 
       // #id
@@ -105,7 +109,9 @@
       let selectElements = document.querySelectorAll("div li");
       console.log(selectElements);
       // =====================================
+
       // Prac6.remove
+      selectElements[0].remove();
     </script>
   </body>
 </html>
