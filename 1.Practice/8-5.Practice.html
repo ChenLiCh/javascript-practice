@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員註冊</title>
+    <!-- 引入 Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1>會員註冊</h1>
+        <form>
+            <!-- 姓名 -->
+            <div class="mb-3">
+                <label for="name" class="form-label">姓名 <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="name" id="name">
+            </div>
+
+            <!-- 性別 -->
+            <div class="mb-3">
+                <label class="form-label">性別<span class="text-danger">*</span></label>
+                <select name="gender">
+                    <option value="" disabled selected>請選擇性別</option>
+                </select>
+                <span id="unicodeDisplay"></span>
+            </div>
+
+            <!-- 國籍 -->
+            <div class="mb-3">
+                <label class="form-label">國籍 <span class="text-danger">*</span></label>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="nationality" id="domestic" value="domestic">
+                        <!-- 國內選項 -->
+                        <label class="form-check-label" for="domestic">國內</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="nationality" id="overseas" value="overseas">
+                        <!-- 國外選項 -->
+                        <label class="form-check-label" for="overseas">國外</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 出生年月 -->
+            <div class="mb-3">
+                <label for="birthday" class="form-label">出生年月 <span class="text-danger">*</span></label>
+                <input type="date" class="form-control" id="birthday" name="birthday" value="">
+            </div>
+
+            <!-- 身分證字號 -->
+            <div class="mb-3">
+                <label for="id" class="form-label">身分證字號 <span class="text-danger">*</span></label>
+                <input type="text" name="id" class="form-control" id="id">
+            </div>
+
+            <!-- 密碼 -->
+            <div class="mb-3">
+                <label for="password" class="form-label">密碼 <span class="text-danger">*</span></label>
+                <input type="password" name="password" class="form-control" id="password">
+            </div>
+
+            <!-- 提交按鈕 -->
+            <button type="submit" class="btn btn-primary">提交</button>
+            <button type="button" class="btn btn-danger" id="resetBtn">清除</button>
+        </form>
+    </div>
+
+    <script>
+
+        // 1.姓名不能輸入空白
+        // 1-1阻止預設 keydown
+        // 1-2移除除中間空白 blur
+
+        // 2.性別選單
+        // 2-1 動態產生性別選單
+        const genders = [
+            { 'text': '男', 'type': 1, 'unicode': '\u2642\uFE0F' },
+            { 'text': '女', 'type': 2, 'unicode': '\u2640\uFE0F' },
+            { 'text': '其他', 'type': 3, 'unicode': '\uD83C\uDFF3\u200D\uD83C\uDF08' }]
+
+        // 2-2 change事件 選擇後 顯示對應的unicode
+
+        // *父子兄弟關係
+
+        // 3.國籍 forEach註冊
+
+        // 4.設定預設生日
+
+        // 5.submit 事件
+
+        // 6.rest 事件
+
+    </script>
+
+</body>
+
+</html>
