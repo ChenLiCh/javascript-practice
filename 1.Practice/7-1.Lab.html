@@ -8,7 +8,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <script src="./common/common7.js"></script>
+    <script src="../2.Lab/common/common7.js"></script>
   </head>
 
   <body>
@@ -127,12 +127,12 @@
 
       let sports = sportsGroup1.concat(sportsGroup2);
       let index = 1;
-      sports.map((sport) => {
+      let newSports = sports.map((sport) => {
         sport = index++ + "." + sport;
         return sport;
       });
 
-      ans6 = sports;
+      ans6 = newSports;
       // =====================================
       // Q7 請篩選出工讀生 請用員工編號(id)排序 大寫輸出並用逗號(,)分開 ex：APPLE,BANANA,ORANGE
       let ans7;
