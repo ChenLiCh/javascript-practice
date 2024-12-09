@@ -57,28 +57,46 @@
 
         // Cookie
         function setCookieByMaxAge() {
+            const age = 1 * 24 * 60 * 60;
+            document.cookie = `member1=${memberStringiFy}; max-age=${age};path=/;`
         }
         function setCookieByExpires() {
+            const expires = new Date(2024, 11, 10);
+            document.cookie = `member2=${member2}; expires=${expires.toUTCString()};path=/;`
         }
+
         function getCookie() {
+            console.log(document.cookie);
         }
+
         function deleteCookie() {
+            document.cookie = `member1=${memberStringiFy}; max-age=${0};path=/;`
+            const expires = new Date();
+            document.cookie = `member2=${memberStringiFy}; expires=${expires.toUTCString()};path=/;`
         }
 
         // LocalStorage
         function setLocalStorage() {
+            localStorage.setItem('ls-member', memberStringiFy);
         }
         function getLocalStorage() {
+            let ls = localStorage.getItem('ls-member', memberStringiFy);
+            console.log(ls);
         }
         function deleteLocalStorage() {
+            localStorage.clear('ls-member')
         }
 
         // SessionStorage
         function setSessionStorage() {
+            sessionStorage.setItem('ss-member', memberStringiFy);
         }
         function getSessionStorage() {
+            let ls = sessionStorage.getItem('ss-member', memberStringiFy);
+            console.log(ls);
         }
         function deleteSessionStorage() {
+            sessionStorage.clear('ss-member')
         }
 
 
