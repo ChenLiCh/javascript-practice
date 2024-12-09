@@ -1,89 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cookie, LocalStorage, SessionStorage</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body>
-
+  <body>
     <h1>Cookie, LocalStorage, SessionStorage</h1>
 
     <!-- Cookie 操作 -->
-    <button onclick="setCookieByMaxAge()" class="btn btn-success">Set Cookie-MaxAge</button>
-    <button onclick="setCookieByExpires()" class="btn btn-success">Set Cookie-Expires</button>
+    <button onclick="setCookieByMaxAge()" class="btn btn-success">
+      Set Cookie-MaxAge
+    </button>
+    <button onclick="setCookieByExpires()" class="btn btn-success">
+      Set Cookie-Expires
+    </button>
     <button onclick="getCookie()" class="btn btn-primary">Get Cookie</button>
-    <button onclick="deleteCookie()" class="btn btn-danger">Delete Cookie</button>
+    <button onclick="deleteCookie()" class="btn btn-danger">
+      Delete Cookie
+    </button>
 
-    <br><br>
+    <br /><br />
 
     <!-- LocalStorage 操作 -->
-    <button onclick="setLocalStorage()" class="btn btn-success">Set LocalStorage</button>
-    <button onclick="getLocalStorage()" class="btn btn-primary">Get LocalStorage</button>
-    <button onclick="deleteLocalStorage()" class="btn btn-danger">Delete LocalStorage</button>
+    <button onclick="setLocalStorage()" class="btn btn-success">
+      Set LocalStorage
+    </button>
+    <button onclick="getLocalStorage()" class="btn btn-primary">
+      Get LocalStorage
+    </button>
+    <button onclick="deleteLocalStorage()" class="btn btn-danger">
+      Delete LocalStorage
+    </button>
 
-    <br><br>
+    <br /><br />
 
     <!-- SessionStorage 操作 -->
-    <button onclick="setSessionStorage()" class="btn btn-success">Set SessionStorage</button>
-    <button onclick="getSessionStorage()" class="btn btn-primary">Get SessionStorage</button>
-    <button onclick="deleteSessionStorage()" class="btn btn-danger">Delete SessionStorage</button>
+    <button onclick="setSessionStorage()" class="btn btn-success">
+      Set SessionStorage
+    </button>
+    <button onclick="getSessionStorage()" class="btn btn-primary">
+      Get SessionStorage
+    </button>
+    <button onclick="deleteSessionStorage()" class="btn btn-danger">
+      Delete SessionStorage
+    </button>
 
     <script>
+      const member = { name: "Derek", age: 32 };
+      const memberStringiFy = JSON.stringify(member);
 
-        const member = { 'name': 'Derek', 'age': 32 };
-        const memberStringiFy = JSON.stringify(member);
+      const member2 = { name: "Amy", age: 28 };
+      const member2StringiFy = JSON.stringify(member2);
 
-        const member2 = { 'name': 'Amy', 'age': 28 };
-        const member2StringiFy = JSON.stringify(member2);
+      // 1.cookie
+      // 可手動設定過期時間
+      // 會隨著HTTP傳送
+      // `key=${value}; max-age=${expires.toUTCString()};path=/;`;
+      // `key=${value}; expires=${expires.toUTCString()};path=/;`
 
-        // 1.cookie
-        // 可手動設定過期時間
-        // 會隨著HTTP傳送
-        // `key=${value}; max-age=${expires.toUTCString()};path=/;`;
-        // `key=${value}; expires=${expires.toUTCString()};path=/;`;
+      // 2.localStorage
+      // 需手動刪除，瀏覽器關閉依然存在。
+      // 不會隨著HTTP傳送(手動處理)
 
-        // 2.localStorage
-        // 需手動刪除，瀏覽器關閉依然存在。
-        // 不會隨著HTTP傳送(手動處理)
+      // 3.sessionStorage
+      // 當下對話窗才存在，關閉即消失。
+      // 不會隨著HTTP傳送(手動處理)
 
-        // 3.sessionStorage
-        // 當下對話窗才存在，關閉即消失。
-        // 不會隨著HTTP傳送(手動處理)
+      // Cookie
+      function setCookieByMaxAge() {
+        const age = 1 * 24 * 60 * 60;
+        document.cookie = `member1=${memberStringiFy}; max-age=${age}; path=/;`;
+      }
+      function setCookieByExpires() {}
+      function getCookie() {}
+      function deleteCookie() {}
 
-        // Cookie
-        function setCookieByMaxAge() {
-        }
-        function setCookieByExpires() {
-        }
-        function getCookie() {
-        }
-        function deleteCookie() {
-        }
+      // LocalStorage
+      function setLocalStorage() {}
+      function getLocalStorage() {}
+      function deleteLocalStorage() {}
 
-        // LocalStorage
-        function setLocalStorage() {
-        }
-        function getLocalStorage() {
-        }
-        function deleteLocalStorage() {
-        }
-
-        // SessionStorage
-        function setSessionStorage() {
-        }
-        function getSessionStorage() {
-        }
-        function deleteSessionStorage() {
-        }
-
-
+      // SessionStorage
+      function setSessionStorage() {}
+      function getSessionStorage() {}
+      function deleteSessionStorage() {}
     </script>
-
-</body>
-
+  </body>
 </html>

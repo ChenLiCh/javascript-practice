@@ -39,7 +39,7 @@
           <label class="form-label"
             >國籍 <span class="text-danger">*</span></label
           >
-          <div>
+          <div id="watch">
             <div class="form-check form-check-inline">
               <input
                 class="form-check-input"
@@ -150,14 +150,60 @@
       });
 
       // *父子兄弟關係
+      let watchElement = document.querySelector("#watch");
+      console.log(watchElement.parentNode);
+      console.log(watchElement.childNodes);
+      console.log(watchElement.previousSibling);
+      console.log(watchElement.nextSibling);
+
+      console.log(watchElement.childNodes);
+      console.log(watchElement.children);
+      console.log(watchElement.parentElement);
+      console.log(watchElement.children);
+      console.log(watchElement.previousElementSibling);
+      console.log(watchElement.nextElementSibling);
 
       // 3.國籍 forEach註冊
+      const elements = document.querySelectorAll('[name="nationality"]');
+      elements.forEach((element) => {
+        element.addEventListener("change", function (e) {
+          elements.forEach(
+            (ee) => (ee.nextElementSibling.style.color = "black")
+          );
+          this.nextElementSibling.style.color = "lightgreen";
+        });
+      });
 
       // 4.設定預設生日
+      const getDefaultBirthday = () => {
+        const currentDate = new Date();
+        const fullYear = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, 0);
+        const date = String(currentDate.getDate()).padStart(2, 0);
+        console.log(`${fullYear}-${month}-${date}`);
+        return `${fullYear}-${month}-${date}`;
+      };
+
+      document.querySelector("#birthday").value = getDefaultBirthday();
 
       // 5.submit 事件
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        let formData = new FormData(this);
+        console.clear();
+        formData.forEach((value, key) => {
+          console.log(value, key);
+        });
+      });
 
-      // 6.rest 事件
+      // 6.reset 事件
+      // document.querySelector("form").addEventListener("reset", function (e) {});
+
+      document
+        .querySelector("#resetBtn")
+        .addEventListener("click", function () {
+          document.querySelector("form").reset();
+        });
     </script>
   </body>
 </html>
