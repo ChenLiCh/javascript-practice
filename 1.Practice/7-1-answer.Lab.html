@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>7-1.Lab</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="./common/common7.js"></script>
+</head>
+
+<body>
+    <script>
+        // =====================================
+        // Q1 請統計10到16(包含10和16)有幾筆
+        let ans1;
+        const numbers = [1, 13, 5, 7, 11, 13, 17, 19, 9, 2, 15, 18, 16, 20, 8, 14, 16, 6, 10, 4,
+            1, 3, 5, 6, 11, 13, 17, 19, 2, 4, 6, 8, 7, 10, 12, 14, 15, 18, 20, 1,
+            3, 2, 4, 11, 11, 17, 19, 2, 15, 2, 8, 10, 12, 6, 5, 13, 20, 4, 18, 1,
+            3, 2, 7, 19, 15, 17, 11, 4, 12, 2, 6, 5, 12, 14, 16, 18, 3, 9, 1, 3,
+            5, 5, 11, 16, 10, 19, 9, 2, 8, 11, 12, 14, 6, 15, 20, 16, 4, 18]
+
+        ans1 = numbers.filter(x => x >= 10 && x <= 16).length;
+
+
+        // =====================================
+        // Q2 顯示本月第一天格式 顯示 ~yyyy~MM~dd~ ex:~2024~12~01~  String.padStart
+        let ans2;
+
+        let date = new Date();
+        let fullYear = date.getFullYear();
+        let month = String(date.getMonth() + 1).padStart(2, 0);
+        let dateNumber = String(date.getDate()).padStart(2, 0);
+
+        ans2 = `~${fullYear}~${month}~${dateNumber}~`;
+
+        // =====================================
+        // Q3 請篩選出 James 的index
+        let ans3;
+        const names = ["John", "Emily ", "Michael ", " Davis", " Wilson",
+            "Sophia   ", "James ", "Olivia ", " Clark", " Lewis"
+        ];
+
+        ans3 = names.find(e => e.trim() === 'James');
+
+        // =====================================
+        // Q4 請轉成陣列 照編號順序排列(#No.) 只留下名稱 ex [妙花種子,傑尼烏]
+        let ans4;
+        const pokemon = '皮卡丘#25、妙蛙種子#1、水箭龜#9、耿鬼#94、伊布#133、火焰鳥#146、胡地#65、快龍#149、雷丘#26、超夢#150、火恐龍#5';
+
+        let pokemonStringList = pokemon.split('、');
+        ans4 = pokemonStringList
+            .map(e => {
+                let splitArray = e.split('#');
+                return { "name": splitArray[0], "number": splitArray[1] }
+
+            })
+            .sort((a, b) => a.number - b.number)
+            .map(e => e.name);
+
+        // =====================================
+        // Q5 請排除英文名子有B(大小寫都不行)的英雄名
+        let ans5;
+        const marvelHeroes = [
+            "Iron Man",
+            "Captain America",
+            "Spider-Man",
+            "Thor",
+            "Black Widow",
+            "Hulk",
+            "Hawkeye",
+            "Black Panther",
+            "Doctor Strange",
+            "Ant-Man",
+            "Vision",
+            "Scarlet Witch"
+        ];
+
+        ans5 = marvelHeroes.filter(e => !e.toLocaleLowerCase().includes('b'));
+
+        // =====================================
+        // Q6 將兩個陣列合併 並在開頭加入不重複編號 ex 1.籃球2.足球3.排球
+        let ans6;
+
+        const sportsGroup1 = ['籃球', '足球', '排球', '羽毛球', '乒乓球', '游泳', '網球', '高爾夫', '跑步', '健身'];
+        const sportsGroup2 = ['滑雪', '滑板', '武術', '搏擊', '棒球', '攀岩', '自行車', '跆拳道', '競技體操'];
+
+        let sports = sportsGroup1.concat(sportsGroup2);
+        ans6 = sports.map((e, i) => `${i + 1}.${e}`);
+
+        // =====================================
+        // Q7 請篩選出工讀生 請用員工編號(id)排序 大寫輸出並用逗號(,)分開 ex：APPLE,BANANA,ORANGE
+        let ans7;
+        const employees = [
+            { 'name': 'Derek', 'workTypeDisplay': '工讀', 'workType': 2 },
+            { 'name': 'Amy', 'workTypeDisplay': '正職', 'workType': 1 },
+            { 'name': 'Ken', 'workTypeDisplay': '工讀', 'workType': 2 },
+            { 'name': 'Lily', 'workTypeDisplay': '正職', 'workType': 1 },
+            { 'name': 'John', 'workTypeDisplay': '工讀', 'workType': 2 }
+        ];
+
+        ans7 = employees
+            .filter(e => e.workType === 2)
+            .map(e => e.name.toLocaleUpperCase())
+            .join(',');
+
+    </script>
+</body>
+
+</html>
